@@ -1,9 +1,17 @@
-var express = require('express');
+var express = require('express'),
+ router = express.Router(),
+    app = express().use(body_parser.json());
 
-var router = express.Router();
+// assign the swig engine to .html files
+app.engine('html', cons.swig);
+// set .html as the default extension
+app.set('view engine', 'html');
+app.set('views', './views/admin');
 
 router.get('/', function(req, res) {
-    res.send('GET handler for /pages route.' );
+    res.render('index', {
+        title: 'Consolidate.js'
+    });
 });
 
 router.post('/', function(req, res) {

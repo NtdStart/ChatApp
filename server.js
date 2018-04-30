@@ -34,30 +34,24 @@ app.use(express.static('public'));
 
 
 io.on('connection', function (socket) {
-
     /**
      * On registered user from client.
      */
     socket.on('registerUser', function (userId, connectionId) {
         pushService.registerUser(userId, connectionId);
     });
-
-
     /**
      * On registered socket from client.
      */
     socket.on('registerSocket', function (userId, connectionId) {
         pushService.registerSocket(userId, connectionId, socket);
     });
-
-
     /**
      * On join group from client.
      */
     socket.on('joinGroup', function (group) {
         pushService.joinGroup(group, socket);
     });
-
     /**
      * On disconnected socket.
      */
@@ -87,28 +81,16 @@ app.set('view engine', 'html');
 app.set('views', './views');
 
 
-
-
 var page = require('./public/page');
-
 app.use('/page', page);
+
+
 // creates express http server
 app.get('/', function (req, res) {
     res.render('index', {
         title: 'Consolidate.js'
     });
 });
-
-app.get('/page', function (req, res) {
-    app.set('views', './views/admin');
-    res.render('index', {
-        title: 'Consolidate.js'
-    });
-});
-
-
-
-
 
 
 
