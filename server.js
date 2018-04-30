@@ -12,8 +12,6 @@
 
 // Imports dependencies and set up http server
 
-import {} from 'dotenv/config';
-
 const
     request = require('request'),
     cons = require('consolidate'),
