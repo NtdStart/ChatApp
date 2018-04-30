@@ -11,7 +11,9 @@
 'use strict';
 
 // Imports dependencies and set up http server
-require('dotenv').config();
+
+import {} from 'dotenv/config';
+
 const
     request = require('request'),
     cons = require('consolidate'),
