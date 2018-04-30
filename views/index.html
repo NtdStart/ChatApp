@@ -1,0 +1,145 @@
+<html>
+<head>
+  <title>Toibansi.com Admin</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+<script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else {
+      // The person is not logged into your app or we are unable to tell.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    }
+  };
+    
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2032472167011543',
+      cookie     : true,  // enable cookies to allow the server to access 
+                          // the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.12' // use graph api version 2.8
+    });
+
+    // Now that we've initialized the JavaScript SDK, we call 
+    // FB.getLoginStatus().  This function gets the state of the
+    // person visiting this page and can return one of three states to
+    // the callback you provide.  They can be:
+    //
+    // 1. Logged into your app ('connected')
+    // 2. Logged into Facebook, but not your app ('not_authorized')
+    // 3. Not logged into Facebook and can't tell if they are logged into
+    //    your app or not.
+    //
+    // These three cases are handled in the callback function.
+
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+
+  };
+
+  // Load the SDK asynchronously
+ (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=2032472167011543&autoLogAppEvents=1';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    $('.fb-login-button').hide();
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      avatar = 'http://graph.facebook.com/' +response.id +'/picture?type=large' ;
+      html = '<img src="' + avatar + '" class="img-rounded" alt="'+ response.name +'"> <br/>' + 
+        'Thanks for logging in, ' + response.name + '!' +
+        '<a href="#" onclick="logoutFB();")>Thoát</a>';
+      document.getElementById('status').innerHTML = html;     
+      $('#pageList').show();
+    });
+  }
+      
+      
+  function logoutFB(){
+    FB.logout();
+    location.reload();
+  }
+</script>
+  
+  
+  <div style="margin:100px;">
+    <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">Admin</a>
+    <ul class="nav navbar-nav">
+
+    </ul>
+  </div>
+</nav>
+    <div class="jumbotron"  style="padding:40px;">
+      <div id="fb-root"></div>
+        <div class="center-block" style="width:300px;background-color:#ccc;">   
+          
+              <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+         <script>
+            $(function () {
+              var socket = io();
+          
+              // socket.emit('registerUser',10,'connectionId');
+              // socket.emit('registerSocket',10,'connectionId');  
+              
+              socket.emit('joinGroup','50k');
+              
+              
+              socket.on('broadcast_notification', function(msg){
+                $('#status').append($('<li>').text(msg));
+              });                          
+            });
+         </script>
+          
+          
+           <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+           <div id="status"></div>
+          <div id="pageList" style="display:none">
+            <a href="">
+              <a href="/page">
+                <h3>
+                Quản lý fanpage
+              </h3>
+              </a>
+            </a>
+          </div>
+        </div>
+    </div>
+  </div>  
+</body>
+</html>
