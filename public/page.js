@@ -1,5 +1,8 @@
 var express = require('express'),
- router = express.Router(),
+    router = express.Router(),
+    cons = require('consolidate'),
+    express = require('express'),
+    body_parser = require('body-parser'),
     app = express().use(body_parser.json());
 
 // assign the swig engine to .html files
