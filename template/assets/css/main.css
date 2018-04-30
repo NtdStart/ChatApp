@@ -239,7 +239,7 @@ html.fullscreen-bg #wrapper {
     right: 16px; }
 
 .navbar-nav > li > a {
-  padding: 28px 20px; }
+  padding: 0px 0px; }
   .navbar-nav > li > a > i {
     font-size: 22px;
     margin-right: 2px;
