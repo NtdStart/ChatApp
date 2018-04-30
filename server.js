@@ -90,9 +90,15 @@ app.engine('html', cons.swig);
 
 // set .html as the default extension
 app.set('view engine', 'html');
-app.set('views', './views/admin');
+app.set('views', './views');
 
 app.get('/', function (req, res) {
+    res.render('/admin/index', {
+        title: 'Consolidate.js'
+    });
+});
+
+app.get('/page', function (req, res) {
     res.render('index', {
         title: 'Consolidate.js'
     });
