@@ -64,7 +64,7 @@ footer {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  width: 260px;
+  width: 60px;
   height: 100%;
   float: left;
   background-color: #2B333E;
@@ -267,7 +267,7 @@ html.fullscreen-bg #wrapper {
   .navbar-nav .dropdown-menu > li > a i {
     vertical-align: middle; }
 
-.nav>li>a{
+.sidebar-scroll .nav>li>a{
   padding: 10px 5px;
 }
 
