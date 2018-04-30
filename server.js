@@ -62,18 +62,6 @@ io.on('connection', function (socket) {
 });
 
 
-var myLogger = function (req, res, next) {
-    console.log('LOGGED ')
-    next()
-};
-var requestTime = function (req, res, next) {
-    req.requestTime = Date.now()
-    next()
-};
-
-app.use(myLogger);
-app.use(requestTime);
-
 // assign the swig engine to .html files
 app.engine('html', cons.swig);
 // set .html as the default extension
@@ -81,13 +69,19 @@ app.set('view engine', 'html');
 app.set('views', './views');
 
 
-var page = require('./public/page');
-app.use('/page', page);
 
 
 // creates express http server
 app.get('/', function (req, res) {
     res.render('index', {
+        title: 'Consolidate.js'
+    });
+});
+
+
+
+app.get('/page', function (req, res) {
+    res.render('admin/index', {
         title: 'Consolidate.js'
     });
 });
@@ -298,6 +292,30 @@ var pushService = (function () {
 
     }
 }());
+
+
+
+
+
+
+
+
+
+
+
+
+
+var myLogger = function (req, res, next) {
+    console.log('LOGGED ')
+    next()
+};
+var requestTime = function (req, res, next) {
+    req.requestTime = Date.now()
+    next()
+};
+
+app.use(myLogger);
+app.use(requestTime);
 
 
 /**
