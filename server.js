@@ -17,7 +17,7 @@ const
     express = require('express'),
     body_parser = require('body-parser'),
     app = express().use(body_parser.json()),
-    PAGE_ACCESS_TOKEN = 'EAAc4hc2H1NcBACH5ffJLJ0lxPBMx3TlSkKLDLoquMOVZCCOgC25cOkDhIC0vNvp5ZCiDACXfssXovqKO7EHp4VufZCZCKH8CQAAcGNosFGCwdvo0UVBB73wqhaVy6qUQ8bFXYRon59mjvGHZBX0kQJJvHLYl75f87zYAPIT55c7ge651wUQsJ';
+    PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
