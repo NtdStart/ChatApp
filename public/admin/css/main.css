@@ -173,7 +173,7 @@ html.fullscreen-bg #wrapper {
     background-color: #f8f8f8; }
   .navbar-default .brand {
     float: left;
-    padding: 10px 39px;
+    padding: 15px 39px;
     background-color: #fff; }
   @media screen and (max-width: 1024px) {
     .navbar-default .brand {
@@ -228,7 +228,6 @@ html.fullscreen-bg #wrapper {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
-  padding-bottom: 28px;
   position: relative; }
   .navbar-nav .icon-menu .badge {
     position: absolute;
