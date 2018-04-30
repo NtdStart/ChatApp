@@ -81,7 +81,20 @@ footer {
   left: 0;
   position: relative;
   float: right;
-  background-color: #f5f5fa; }
+  background-color: #f5f5fa;
+}
+
+#wrapper .main .main-content {
+  width: calc(100% - 350px);
+  left: 0;
+  float: right;
+}
+
+.main .tab-chat-list {
+  width: 350px;
+  left: 0;
+  float: left;
+}
 
 #wrapper #sidebar-nav,
 #wrapper .main {
@@ -110,7 +123,7 @@ footer {
 .offcanvas-active #wrapper .main {
   width: 100%;
   position: relative;
-  left: 260px; }
+  left: 430px; }
 
 @media screen and (max-width: 1024px) {
   #wrapper .sidebar {
