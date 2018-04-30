@@ -80,37 +80,37 @@ var requestTime = function (req, res, next) {
 app.use(myLogger);
 app.use(requestTime);
 
-
-var page = require('./public/page');
-
-app.use('/page', page);
-
 // assign the swig engine to .html files
 app.engine('html', cons.swig);
-
 // set .html as the default extension
 app.set('view engine', 'html');
 app.set('views', './views');
 
+
+
+
+var page = require('./public/page');
+
+app.use('/page', page);
+// creates express http server
 app.get('/', function (req, res) {
-    res.render('/admin/index', {
+    res.render('index', {
         title: 'Consolidate.js'
     });
 });
 
 app.get('/page', function (req, res) {
+    app.set('views', './views/admin');
     res.render('index', {
         title: 'Consolidate.js'
     });
 });
 
 
-// creates express http server
-app.get('/', function (req, res) {
-    var responseText = 'Hello World!<br>'
-    responseText += '<small>Requested at: ' + req.requestTime + '</small>'
-    res.send(responseText)
-})
+
+
+
+
 
 // Accepts POST requests at /webhook endpoint
 app.post('/webhook', (req, res) => {
