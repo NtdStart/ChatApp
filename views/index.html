@@ -96,7 +96,7 @@
             html = '<img src="' + avatar + '" class="img-rounded" alt="' + response.name + '"> <br/>' +
                 'Thanks for logging in, ' + response.name + '!' +
                 '<a href="#" onclick="logoutFB();")>Thoát</a>';
-            document.getElementById('status').innerHTML = html;
+            document.getElementById('status_Login').innerHTML = html;
             $('#pageList').show();
         });
     }
@@ -119,7 +119,9 @@
                     <div class="content">
                         <div class="header">
                             <div class="logo text-center"><img src="admin/img/logo-dark.png" alt="Klorofil Logo"></div>
-                            <p class="lead">Login to your account</p>
+                            <p class="lead" id="status_Login">
+
+                            </p>
                         </div>
                         <div class="fb-login-button" data-max-rows="1" data-size="large"
                              data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true"
@@ -129,8 +131,11 @@
                 <div class="right">
                     <div class="overlay"></div>
                     <div class="content text">
-                        <h1 class="heading">Free Bootstrap dashboard template</h1>
-                        <p>by The Develovers</p>
+                        <h1 class="heading">YOUR FACEBOOK PAGES</h1>
+                        <div id="pageList">
+
+                        </div>
+                        <p>by Toibansi.com</p>
                     </div>
                 </div>
                 <div class="clearfix"></div>
