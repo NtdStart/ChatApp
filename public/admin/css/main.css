@@ -187,8 +187,7 @@ html.fullscreen-bg #wrapper {
       float: right; } }
 
 .navbar-btn {
-  float: left;
-  padding: 16px 0; }
+  float: left; }
   .navbar-btn button {
     font-size: 24px;
     padding: 4px 8px;
@@ -204,7 +203,6 @@ html.fullscreen-bg #wrapper {
   float: right; }
 
 .navbar-form {
-  padding: 15px;
   border: 0; }
   .navbar-form input[type="text"] {
     min-width: 200px; }
@@ -230,16 +228,14 @@ html.fullscreen-bg #wrapper {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
-  padding-top: 28px;
   padding-bottom: 28px;
   position: relative; }
   .navbar-nav .icon-menu .badge {
     position: absolute;
-    top: 22px;
-    right: 16px; }
+    top: 5px;
+    right: 10px; }
 
-.navbar-nav > li > a {
-  padding: 0px 0px; }
+.navbar-nav > li > a { }
   .navbar-nav > li > a > i {
     font-size: 22px;
     margin-right: 2px;
