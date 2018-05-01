@@ -560,11 +560,7 @@
             xfbml: true,  // parse social plugins on this page
             version: 'v2.12' // use graph api version 2.8
         });
-    }
-
-
-    var pageAccessToken = 'EAACEdEose0cBAMEpWnVfPRnQDTnsLsEAnWuZArkEaolyUn6eBSDPZA11X6D8ZCf0MO6tJQiDJe0WZAvl7tN8FsNrwZCiTVVIrwYwv80pHCwtdGbZCgpvE08ZCd8BiPm5RHiUKhbaKnXdRF3ttWR4F9QWXxVFPm8kZAc0deWs1eD4qEvg9UiNyTMMwtCBGyZC5zZCpJJzXj1RS1UwZDZD';
-    $(document).ready(function () {
+        var pageAccessToken = 'EAACEdEose0cBAMEpWnVfPRnQDTnsLsEAnWuZArkEaolyUn6eBSDPZA11X6D8ZCf0MO6tJQiDJe0WZAvl7tN8FsNrwZCiTVVIrwYwv80pHCwtdGbZCgpvE08ZCd8BiPm5RHiUKhbaKnXdRF3ttWR4F9QWXxVFPm8kZAc0deWs1eD4qEvg9UiNyTMMwtCBGyZC5zZCpJJzXj1RS1UwZDZD';
         FB.api(
             '/598135600563114/conversations',
             'GET',
@@ -573,7 +569,8 @@
                 console.log('test', response.data.senders.name)
             }
         );
-    });
+    }
+
 </script>
 
 <script>
