@@ -1,0 +1,22 @@
+
+FB.api(
+  '/598135600563114/conversations',
+  'GET',
+  {"fields":"id,senders","limit":"20","after":"1"},
+  function(response) {
+      // Insert your code here
+  }
+);
+
+
+FB.api(
+  '/t_100025206424382/messages',
+  'GET',
+  {"fields":"from,id,to,message,created_time","pretty":"10","after":"1"},
+  function(response) {
+      // Insert your code here
+  }
+);
+
+
+

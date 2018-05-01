@@ -116,24 +116,19 @@
         <div id="exTab3" class="tab-chat-list panel">
             <ul class="nav nav-pills">
                 <li class="active">
-                    <a href="#1b" data-toggle="tab">Overview</a>
+                    <a href="#1b" data-toggle="tab">Inbox</a>
                 </li>
-                <li><a href="#2b" data-toggle="tab">Using nav-pills</a>
-                </li>
-                <li><a href="#3b" data-toggle="tab">Applying clearfix</a>
+                <li>
+                    <a href="#2b" data-toggle="tab">Comment</a>
                 </li>
             </ul>
 
             <div class="tab-content clearfix">
                 <div class="tab-pane active" id="1b">
-                    <h3>Same as example 1 but we have now styled the tab's corner</h3>
+                    <h3>List inbox</h3>
                 </div>
                 <div class="tab-pane" id="2b">
-                    <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color
-                        for the tab</h3>
-                </div>
-                <div class="tab-pane" id="3b">
-                    <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+                    <h3>List comment</h3>
                 </div>
             </div>
         </div>
@@ -543,6 +538,20 @@
 <script src="admin/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 <script src="admin/vendor/chartist/js/chartist.min.js"></script>
 <script src="admin/scripts/klorofil-common.js"></script>
+
+
+<script>
+    var pageAccessToken = 'EAACEdEose0cBAMEpWnVfPRnQDTnsLsEAnWuZArkEaolyUn6eBSDPZA11X6D8ZCf0MO6tJQiDJe0WZAvl7tN8FsNrwZCiTVVIrwYwv80pHCwtdGbZCgpvE08ZCd8BiPm5RHiUKhbaKnXdRF3ttWR4F9QWXxVFPm8kZAc0deWs1eD4qEvg9UiNyTMMwtCBGyZC5zZCpJJzXj1RS1UwZDZD';
+    FB.api(
+        '/598135600563114/conversations',
+        'GET',
+        {"fields":"id,senders","limit":"20","after":"1","access_token":pageAccessToken},
+        function(response) {
+            console.log('test', response.data.senders.name)
+        }
+    );
+</script>
+
 <script>
     $(function () {
         var data, options;
