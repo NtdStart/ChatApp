@@ -566,7 +566,11 @@
             'GET',
             {"fields": "id,senders", "limit": "20", "after": "1", "access_token": pageAccessToken},
             function (response) {
-                console.log('test', response.data.senders.name)
+                $.each(response.data, function( key, value ) {
+                        $.each(value, function( key1, value1 ) {
+                            console.log('test', value1.name)
+                        });
+                });
             }
         );
     }
