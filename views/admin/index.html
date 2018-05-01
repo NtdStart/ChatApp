@@ -541,6 +541,17 @@
 
 
 <script>
+
+    // Load the SDK asynchronously
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=2032472167011543&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
     var pageAccessToken = 'EAACEdEose0cBAMEpWnVfPRnQDTnsLsEAnWuZArkEaolyUn6eBSDPZA11X6D8ZCf0MO6tJQiDJe0WZAvl7tN8FsNrwZCiTVVIrwYwv80pHCwtdGbZCgpvE08ZCd8BiPm5RHiUKhbaKnXdRF3ttWR4F9QWXxVFPm8kZAc0deWs1eD4qEvg9UiNyTMMwtCBGyZC5zZCpJJzXj1RS1UwZDZD';
     FB.api(
         '/598135600563114/conversations',
