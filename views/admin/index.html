@@ -567,8 +567,10 @@
             {"fields": "id,senders", "limit": "20", "after": "1", "access_token": pageAccessToken},
             function (response) {
                 $.each(response.data, function( key, value ) {
-                        $.each(value, function( key1, value1 ) {
-                            console.log('test', value1.name)
+                    console.log('Id Conversation : ', value.id)
+                        $.each(value.senders.data, function( key1, value1 ) {
+                            console.log('Sender Id : ', value1.id + '---')
+                            console.log('Sender name : ', value1.name)
                         });
                 });
             }
