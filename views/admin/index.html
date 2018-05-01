@@ -564,14 +564,16 @@
 
 
     var pageAccessToken = 'EAACEdEose0cBAMEpWnVfPRnQDTnsLsEAnWuZArkEaolyUn6eBSDPZA11X6D8ZCf0MO6tJQiDJe0WZAvl7tN8FsNrwZCiTVVIrwYwv80pHCwtdGbZCgpvE08ZCd8BiPm5RHiUKhbaKnXdRF3ttWR4F9QWXxVFPm8kZAc0deWs1eD4qEvg9UiNyTMMwtCBGyZC5zZCpJJzXj1RS1UwZDZD';
-    FB.api(
-        '/598135600563114/conversations',
-        'GET',
-        {"fields":"id,senders","limit":"20","after":"1","access_token":pageAccessToken},
-        function(response) {
-            console.log('test', response.data.senders.name)
-        }
-    );
+    $(document).ready(function () {
+        FB.api(
+            '/598135600563114/conversations',
+            'GET',
+            {"fields": "id,senders", "limit": "20", "after": "1", "access_token": pageAccessToken},
+            function (response) {
+                console.log('test', response.data.senders.name)
+            }
+        );
+    });
 </script>
 
 <script>
