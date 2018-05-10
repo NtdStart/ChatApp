@@ -26,7 +26,7 @@ var port = process.env.PORT || 3000;
 
 
 http.listen(port, function () {
-    console.log('Server listening at port %d', port);
+    console.log('Server start at http://%s:%s','0.0.0.0', port);
 });
 
 // Routing
@@ -73,9 +73,14 @@ app.set('views', './views');
 
 // creates express http server
 app.get('/', function (req, res) {
-    res.render('index', {
-        title: 'Consolidate.js'
-    });
+    try {
+        res.render('index', {
+            title: 'Consolidate.js'
+        });
+    }
+    catch(error) {
+        console.log('Error :', error.toString());
+    }
 });
 
 
